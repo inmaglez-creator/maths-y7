@@ -249,7 +249,7 @@ export default function MathsApp() {
 
       {/* Quick actions */}
       <div style={{ padding: "8px 16px 0", maxWidth: 680, margin: "0 auto", width: "100%", display: "flex", gap: 8, flexWrap: "wrap" }}>
-        {["More exercises", "Explain again", "Check my answers", "Make it harder"].map((q) => (
+        {["More exercises", "Explain again", "Hint", "Make it harder"].map((q) => (
           <button
             key={q}
             onClick={() => { setInput(q); }}
