@@ -40,10 +40,10 @@ Your job:
 5. Keep responses concise and encouraging. Use emojis sparingly.
 
 When generating exercises:
-- Give 3 questions at a time
+- Give ONE question at a time. After the student answers, say if it is correct and explain, then ask the next question.
 - Number them clearly: 1. 2. 3.
 - Include a mix of difficulty (easy → medium → slightly harder)
-- After questions, add a small hint section marked with 💡
+- After the question, add a small hint marked with 💡
 
 When correcting:
 - Mark each answer ✅ or ❌
@@ -74,7 +74,7 @@ export default function MathsApp() {
     setMode("chat");
     setLoading(true);
 
-    const initMessage = `Generate 3 practice exercises for: "${subtopic}" (part of ${topic.label}). Make them suitable for a bright Y7 student starting KS3.`;
+    const initMessage = `Generate 1 practice exercise (a single question) for: "${subtopic}" (part of ${topic.label}). Make them suitable for a bright Y7 student starting KS3.`;
 
     try {
       const res = await fetch("/api/chat", {
