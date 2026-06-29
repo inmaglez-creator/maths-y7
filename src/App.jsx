@@ -98,9 +98,9 @@ export default function MathsApp() {
     setLoading(false);
   };
 
-  const sendMessage = async () => {
-    if (!input.trim() || loading) return;
-    const userMsg = input.trim();
+  const sendMessage = async (text) => {
+    const userMsg = (typeof text === "string" ? text : input).trim();
+    if (!userMsg || loading) return;
     setInput("");
     const newMessages = [...messages, { role: "user", content: userMsg }];
     setMessages(newMessages);
@@ -252,7 +252,7 @@ export default function MathsApp() {
         {["More exercises", "Explain again", "Hint", "Make it harder"].map((q) => (
           <button
             key={q}
-            onClick={() => { setInput(q); }}
+            onClick={() => sendMessage(q)}
             style={{ background: activeTopic.light, color: activeTopic.color, border: `1px solid ${activeTopic.color}30`, borderRadius: 16, padding: "5px 12px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}
           >
             {q}
